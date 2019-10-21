@@ -1,3 +1,6 @@
+#include <unistd.h>
+#include <string.h>
+
 #include "my_putchar.h"
 #include "tree.h"
 
@@ -95,6 +98,17 @@ static void draw(int num, int size)
 	}
 }
 
+
+static void my_putstr(int fd, char *s)
+{
+	write(fd, s, strlen(s));
+}
+
+void my_put_err(char *s)
+{
+	my_putstr(2, s);
+	my_putstr(2, "\n");
+}
 
 void tree(int size)
 {
