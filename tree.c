@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "my_putchar.h"
 #include "tree.h"
@@ -108,7 +109,7 @@ void tree(int size)
 {
 	if (size < 0) {
 		my_put_err("Size should be > 0");
-		return;
+		exit(84);
 	}
 
 	if (size == 0)
