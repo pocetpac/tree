@@ -5,7 +5,7 @@
 int main(int argc, char **argv)
 {
 	if (argc != 2) {
-		my_put_err("Please enter the size");
+		my_put_err("Only one argument required: the size");
 		return 84;
 	}
 
