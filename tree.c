@@ -6,14 +6,13 @@
 
 static int last_line(int size)
 {
-	int i;
 	int jump;
 	int lastline;
 
 	lastline = 7;
 	jump = 6;
 
-	for (i = 1; i < size; i++) {
+	for (int i = 1; i < size; i++) {
 		if ((i % 2) != 0) {
 			lastline += jump;
 		} else if (i !=  1) {
@@ -27,14 +26,13 @@ static int last_line(int size)
 
 static int first_line(int size)
 {
-	int i;
 	int jump;
 	int firstline;
 
 	firstline = 1;
 	jump = 4;
 
-	for (i = 1; i < size; i++) {
+	for (int i = 1; i < size; i++) {
 		if ((i % 2) != 0) {
 			firstline += jump;
 		} else if (i !=  1) {
@@ -49,8 +47,6 @@ static int first_line(int size)
 
 static void draw_tronc(int size)
 {
-	int i;
-	int j;
 	int blank;
 	int largeur_tronc;
 	int hauteur_tronc;
@@ -63,10 +59,10 @@ static void draw_tronc(int size)
 	hauteur_tronc = size;
 	blank = (last_line(size) / 2) - (largeur_tronc / 2);
 
-	for (i = 0; i < hauteur_tronc; i++) {
-		for (j = 0; j < blank; j++)
+	for (int i = 0; i < hauteur_tronc; i++) {
+		for (int j = 0; j < blank; j++)
 			my_putchar(' ');
-		for (j = 0; j < largeur_tronc; j++)
+		for (int j = 0; j < largeur_tronc; j++)
 			my_putchar('|');
 		my_putchar('\n');
 	}
@@ -75,8 +71,6 @@ static void draw_tronc(int size)
 
 static void draw(int num, int size)
 {
-	int i;
-	int j;
 	int blank;
 	int stars;
 	int hauteur_branche;
@@ -85,10 +79,10 @@ static void draw(int num, int size)
 	stars = first_line(num) - 1;
 	hauteur_branche = num + 3;
 
-	for (i = 0; i < hauteur_branche; i++) {
-		for (j = 0; j < blank; j++)
+	for (int i = 0; i < hauteur_branche; i++) {
+		for (int j = 0; j < blank; j++)
 			my_putchar(' ');
-		for (j = 0; j < stars; j++)
+		for (int j = 0; j < stars; j++)
 			my_putchar('*');
 
 		blank--;
