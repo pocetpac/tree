@@ -112,16 +112,11 @@ void my_put_err(char *s)
 
 void tree(int size)
 {
-	int i;
+	if (size == 0)
+		return;
 
-	if (size > 0) {
-		i = 1;
+	for (int i = 1; i <= size; i++)
+		draw(i, size);
 
-		while (i <= size) {
-			draw(i, size);
-			i++;
-		}
-
-		draw_tronc(size);
-	}
+	draw_tronc(size);
 }
