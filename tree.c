@@ -112,6 +112,11 @@ void my_put_err(char *s)
 
 void tree(int size)
 {
+	if (size < 0) {
+		my_put_err("Size should be > 0");
+		return;
+	}
+
 	if (size == 0)
 		return;
 
